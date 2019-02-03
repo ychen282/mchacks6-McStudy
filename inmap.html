@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>McStudy</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+  <iframe id = "map" src="https://snazzymaps.com/embed/130530" width="100%" height="100%" zoom=12 style="border:none;"></iframe>
+  <script>
+    function initMap() {
+      var contentString = '';
+            var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+
+      Schulich.addListener('click', function() {
+        infowindow.open(map, marker);
+      });
+    }
+  </script>
+  
+
+ <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"McLibrary</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+
+      </ul>
+      <ul class="searchbar1">
+        <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Log out </a></li>
+      </ul>
+    </div>
+  </div>
+ </nav>
+
+ <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+ <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+  var frdlist = document.getElementById('friendslist');
+  var btn = document.getElementById("mybtn");
+  var span = document.getElementsByClassName("close")[0];
+  btn.onclick = function() {
+    frdlist.style.display = "block";
+  }
+  span.onclick = function() {
+    frdlist.style.display = "none";
+  }
+  window.onclick = function(event) {
+    if (event.target == frdlist) {
+      frdlist.style.display = "none";
+    }
+  }
+  </script>
+  
+  <!-- Trigger/Open The Modal -->
+ <button type="button" id="myBtn"><img class="image" id="myBtn" src="friends"></button>
+
+<div id="myModal" class="modal">
+     <div id="friendslist" class="frdlist">
+      <span class="close">&times;</span>
+    <ul class="w3-ul w3-card-4">
+        <div class="frdlist-content">
+        <img src="Irene.jpg" class="w3-bar-item" style="width:60px; border-radius:100%; position: absolute; right: 5%; top: 15%;">
+        <ul style="position: absolute; right: 5%; top: 25%;">
+          <span class="w3-medium">Irene</span><br>
+        </ul>    
+      </div>
+    </ul>
+    
+   </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+<!-- for sumbit study schedule -->
+<div class="schedule_popup">
+  <form action="/action_page.php">
+  <p class="library_text">Library:</p>
+  <select class = "libraryList" name="library">
+    <option value="schulich">Schulich Library</option>
+    <option value="redpath">Redpath Library</option>
+    <option value="mclennan">Mclennan Library</option>
+    <option value="music">Music Library</option>
+    <option value="medicine">Medicine</option>
+    <option value="law">Law</option>
+    <option value="education">Education Library</option>
+    <option value="islamic">Islamic Studies Library</option>
+    <option value="birks">Birks Library</option>
+  </select>
+
+  <p class="time_text">Time Period:</p>
+  <select class = "timeList" name="timePeriod" multiple>
+    <option value="9">9 am</option>
+    <option value="930">9:30 am</option>
+    <option value="10">10:00 am</option>
+    <option value="1030">10:30 am</option>
+    <option value="11">11:00 am</option>
+    <option value="1130">11:30 am</option>
+    <option value="12">12:00 pm</option>
+    <option value="1230">12:30 pm</option>
+    <option value="1300">1:00 pm</option>
+    <option value="1330">1:30 pm</option>
+    <option value="1400">2:00 pm</option>
+    <option value="1430">2:30 pm</option>
+    <option value="1500">3:00 pm</option>
+    <option value="1530">3:30 pm</option>
+    <option value="1600">4:00 pm</option>
+    <option value="1630">4:30 pm</option>
+    <option value="1700">5:00 pm</option>
+    <option value="1730">5:30 pm</option>
+    <option value="1800">6:00 pm</option>
+    <option value="1830">6:30 pm</option>
+    <option value="1900">7:00 pm</option>
+    <option value="1930">7:30 pm</option>
+    <option value="2000">8:00 pm</option>
+    <option value="2030">8:30 pm</option>
+    <option value="2100">9:00 pm</option>
+    <option value="2130">9:30 pm</option>
+    <option value="2200">10:00 pm</option>
+    <option value="2230">10:30 pm</option>
+    <option value="2300">11:00 pm</option>
+    <option value="2330">11:30 pm</option>
+    <option value="0000">00:00 am</option>
+  </select>
+
+  <p class="subject_text">Subject:</p>
+  <input class="subject_input" type="text" name="Subject&Code" placeholder="EG. MATH140"><br>
+  <p class="number_text">Number of Members:</p>
+  <select class = "numberList" name="number">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="5plus">5+</option>
+  </select>
+  <button class="submit_schedule">Submit</button>
+  </form>
+</div>
+</body>
+</html>
